@@ -1,3 +1,4 @@
 deployment:
   image: someshwarsangaraju/catalogue
   imageVersion: v1
+  replicas: 1
