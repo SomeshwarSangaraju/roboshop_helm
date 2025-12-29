@@ -1,0 +1,4 @@
+statefulset:
+  image: someshwarsangaraju/mongodb
+  imageVersion: v1
+  replicas: 1
