@@ -53,3 +53,30 @@ spec:
           periodSeconds: 3
           failureThreshold: 1
 
+---
+
+apiVersion: autoscaling/v2
+#apiVersion: autoscaling/v2beta2  # k8s 1.6+ - scale using the largest of multiple metrics
+kind: HorizontalPodAutoscaler
+metadata:
+  name: catalogue
+  namespace: roboshop
+  labels:
+    project: roboshop
+    component: catalogue
+    tier: backend
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: catalogue
+  minReplicas: 1
+  maxReplicas: 10
+  # targetCPUUtilizationPercentage: 70 # multiple metrics using autoscaling/v2beta2 - remove targetCPUUtilizationPercentage if using this
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 70
