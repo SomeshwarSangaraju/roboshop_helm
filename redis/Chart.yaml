@@ -1,0 +1,6 @@
+
+apiVersion: v2
+name: redis # chart name
+version:  7.0.0 # chart version
+description: redis installation
+appVersion: v1 # this is application version
