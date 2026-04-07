@@ -8,7 +8,7 @@ metadata:
     component: mongodb
     tier: db
 spec:
-  replicas: "{{ .Values.statefulset.replicas }}"
+  replicas: {{ .Values.statefulset.replicas }}
   serviceName: "mongodb-headless"
   selector:
     matchLabels:
@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
       - name: mongodb
-        image: "{{ .Values.statefulset.image}}:{{.Values.statefulset.imageVersion }}"
+        image: "{{ .Values.statefulset.imageRepo }}:{{.Values.statefulset.imageVersion }}"
         volumeMounts:
         - name: mongodb
           mountPath: /data/db
