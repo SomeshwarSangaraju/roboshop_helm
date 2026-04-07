@@ -21,7 +21,7 @@ metadata:
   name: redis
   namespace: roboshop
 spec:
-  clusterIp: None
+  clusterIP: None
   selectors:
     project: roboshop
     component: redis

@@ -9,7 +9,7 @@ metadata:
     tier: db
 spec:
   replicas: "{{ .Values.statefulset.replicas }}"
-  serviceName: mongodb-headless
+  serviceName: "mongodb-headless"
   selector:
     matchLabels:
       project: roboshop
