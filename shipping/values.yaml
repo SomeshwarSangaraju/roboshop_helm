@@ -1,0 +1,5 @@
+deployment:
+  replicas: 1
+  imageRepo: someshwarsangaraju/shipping
+  imageVersion: v1
+  
